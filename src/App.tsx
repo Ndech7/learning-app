@@ -4,7 +4,7 @@ import "./App.css";
 const App = () => {
   return (
     <div>
-      <p>This is My Learning App</p>
+      <p className="text-3xl font-bold">This is My Learning App</p>
     </div>
   );
 };

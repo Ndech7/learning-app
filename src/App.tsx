@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import HubsList from "./components/hubs-list.component";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
       </div>
       <div className="mt-3">
         <Routes>
-          <Route path="/"></Route>
+          <Route path="/" element={<HubsList />}></Route>
           <Route path="/add"></Route>
           <Route path="/hubs/:id"></Route>
         </Routes>

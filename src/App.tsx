@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import HubsList from "./components/hubs-list.component";
+import Hub from "./components/hub.component";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HubsList />}></Route>
           <Route path="/add"></Route>
-          <Route path="/hubs/:id"></Route>
+          <Route path="/hubs/:id" element={<Hub />}></Route>
         </Routes>
       </div>
     </div>

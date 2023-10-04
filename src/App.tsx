@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import HubsList from "./components/hubs-list.component";
 import Hub from "./components/hub.component";
+import AddHub from "./components/add-hub.component";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
       <div className="mt-3">
         <Routes>
           <Route path="/" element={<HubsList />}></Route>
-          <Route path="/add"></Route>
+          <Route path="/add" element={<AddHub />}></Route>
           <Route path="/hubs/:id" element={<Hub />}></Route>
         </Routes>
       </div>

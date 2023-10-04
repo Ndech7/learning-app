@@ -35,7 +35,6 @@ const AddHub = () => {
     };
     HubsDataService.create(data)
       .then((response: any) => {
-        console.log(response);
         setHub({
           title: response.data.title,
           description: response.data.description,
@@ -60,33 +59,43 @@ const AddHub = () => {
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
-          <button onClick={newHub}>Add</button>
+          <button
+            onClick={newHub}
+            className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:green-600"
+          >
+            Add
+          </button>
         </div>
       ) : (
-        <div>
+        <div className="mb-2">
           <div>
             <label htmlFor="title">Title</label>
             <input
               type="text"
               id="title"
-              className="text-black"
+              className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
               required
               value={title}
               onChange={onChangeTitle}
             />
           </div>
-          <div>
+          <div className="mb-2">
             <label htmlFor="description">Description</label>
             <input
               type="text"
               id="description"
-              className="text-black"
+              className="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
               required
               value={description}
               onChange={onChangeDescription}
             />
           </div>
-          <button onClick={saveHub}>Submit</button>
+          <button
+            onClick={saveHub}
+            className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:green-600"
+          >
+            Submit
+          </button>
         </div>
       )}
     </>

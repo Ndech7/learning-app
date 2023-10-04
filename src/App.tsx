@@ -8,10 +8,12 @@ import AddHub from "./components/add-hub.component";
 const App = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
-      <div className="bg-teal-700 text-white sticky top-0 z-10">
+      <div className="relative flex flex-wrap items-center content-between py-3 px-4 flex-no-wrap text-white bg-teal-700 ">
         <section className="flex p-2 ">
-          <h1 className="text-xl font-medium">Learning App</h1>
-          <nav className="px-48 text-xl">
+          <h1 className="inline-block mr-4 text-2xl whitespace-no-wrap text-slate-950">
+            Learning App
+          </h1>
+          <nav className="flex flex-wrap list-reset pl-0 mb-0 mr-auto text-xl">
             <Link to="/" className="px-16">
               Home
             </Link>
@@ -21,7 +23,7 @@ const App = () => {
           </nav>
         </section>
       </div>
-      <div className="mt-3">
+      <div className="container mx-auto sm:px-4 mt-3">
         <Routes>
           <Route path="/" element={<HubsList />}></Route>
           <Route path="/add" element={<AddHub />}></Route>

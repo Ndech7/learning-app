@@ -65,7 +65,7 @@ const HubsList = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         <div className="md:w-1/2 px-4">
           <h4 className="m-2">Hubs List</h4>
           <ul className="flex flex-col pl-0 mb-0 border rounded border-gray-300">

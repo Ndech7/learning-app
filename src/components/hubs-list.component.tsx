@@ -65,66 +65,68 @@ const HubsList = () => {
           </div>
         </div>
       </div>
-      <div className="md:w-1/2 px-4">
-        <h4 className="m-2">Hubs List</h4>
-        <ul className="flex flex-col pl-0 mb-0 border rounded border-gray-300">
-          {hubs
-            ? hubs.map((hub: IHubData, index: number) => (
-                <li
-                  key={hub._id?.toString()}
-                  className={
-                    "relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-300 no-underline" +
-                    (index === currentIndex ? "active:focus:bg-cyan-600" : "")
-                  }
-                  onClick={() => setActiveHub(hub, index)}
-                >
-                  {hub.title}
-                </li>
-              ))
-            : null}
-        </ul>
-        <button
-          className="m-6 inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded no-underline py-1 px-2 leading-tight text-xs  bg-red-600 text-white hover:bg-red-700"
-          onClick={removeHubs}
-        >
-          Remove All
-        </button>
-      </div>
-      <div className="md:w-1/2 px-4">
-        {currentHub ? (
-          <div>
-            <h4>Hub</h4>
+      <div className="flex">
+        <div className="md:w-1/2 px-4">
+          <h4 className="m-2">Hubs List</h4>
+          <ul className="flex flex-col pl-0 mb-0 border rounded border-gray-300">
+            {hubs
+              ? hubs.map((hub: IHubData, index: number) => (
+                  <li
+                    key={hub._id?.toString()}
+                    className={
+                      "relative block py-3 px-6 -mb-px border border-r-0 border-l-0 border-gray-300 no-underline" +
+                      (index === currentIndex ? "active:focus:bg-cyan-600" : "")
+                    }
+                    onClick={() => setActiveHub(hub, index)}
+                  >
+                    {hub.title}
+                  </li>
+                ))
+              : null}
+          </ul>
+          <button
+            className="m-6 inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded no-underline py-1 px-2 leading-tight text-xs  bg-red-600 text-white hover:bg-red-700"
+            onClick={removeHubs}
+          >
+            Remove All
+          </button>
+        </div>
+        <div className="md:w-1/2 px-4">
+          {currentHub ? (
             <div>
-              <label>
-                <strong>Title: </strong>
-              </label>
-              {currentHub.title}
+              <h4>Hub</h4>
+              <div>
+                <label>
+                  <strong>Title: </strong>
+                </label>
+                {currentHub.title}
+              </div>
+              <div>
+                <label>
+                  <strong>Description: </strong>
+                </label>
+                {currentHub.description}
+              </div>
+              <div>
+                <label>
+                  <strong>Status: </strong>
+                </label>
+                {currentHub.completed ? "Complete" : "Incomplete"}
+              </div>
+              <Link
+                to={`/hubs/${currentHub._id}`}
+                className="inline-block p-1 text-center font-semibold text-sm align-baseline leading-none rounded bg-orange-400 text-black hover:bg-orange-500"
+              >
+                Edit
+              </Link>
             </div>
+          ) : (
             <div>
-              <label>
-                <strong>Description: </strong>
-              </label>
-              {currentHub.description}
+              <br />
+              <p>Please select a Hub...</p>
             </div>
-            <div>
-              <label>
-                <strong>Status: </strong>
-              </label>
-              {currentHub.completed ? "Complete" : "Incomplete"}
-            </div>
-            <Link
-              to={`/hubs/${currentHub._id}`}
-              className="inline-block p-1 text-center font-semibold text-sm align-baseline leading-none rounded bg-orange-400 text-black hover:bg-orange-500"
-            >
-              Edit
-            </Link>
-          </div>
-        ) : (
-          <div>
-            <br />
-            <p>Please select a Hub...</p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
